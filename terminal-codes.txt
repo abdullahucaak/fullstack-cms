@@ -1,0 +1,15 @@
+rsync -avz --exclude 'node_modules' --exclude '.git' --exclude '.env' \
+-e "ssh -i ~/.ssh/ankara-kaan-mba.pem" \
+. ubuntu@ec2-13-60-29-149.eu-north-1.compute.amazonaws.com:~/app
+
+ssh -i "ankara-kaan-mba.pem" ubuntu@ec2-13-60-29-149.eu-north-1.compute.amazonaws.com
+
+sudo vim /etc/caddy/Caddyfile
+sudo systemctl restart caddy
+
+sudo ufw status
+sudo ufw allow 443/tcp
+sudo ufw reload
+
+
+

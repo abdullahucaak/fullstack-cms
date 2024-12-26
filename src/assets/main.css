@@ -1,0 +1,177 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+main, header {
+  background-color: rgb(46, 46, 46);
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+}
+main {
+  height: fit-content;
+}
+button {
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 5px 20px;
+}
+
+li{
+  list-style-type: none;
+}
+.delete {
+  background-color: rgb(192, 57, 57);
+  color: white;
+}
+.popup {
+  color: black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Kartların bulunduğu ana konteyner */
+.product-grid {
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); /* Kartların genişliği 300px'ye kadar, sonrasında otomatik sütun oluştur */
+  gap: 20px; /* Sütunlar ve satırlar arası boşluk */
+  padding: 20px;
+}
+
+/* Kartın ana konteyneri */
+.product-card {
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%; /* Kartın genişliği yüzde olarak ayarlandı */
+}
+
+/* Ürün fotoğrafı */
+.product-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  object-fit: cover;
+  aspect-ratio: 1;
+  border-radius: 5px;
+}
+
+/* Ürün adı */
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Ürün açıklaması */
+.product-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Stok adedi */
+.product-stock {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
+}
+.product-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(188, 188, 188);
+  margin-bottom: 10px;
+}
+
+/* Güncelle ve Sil butonları */
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.update-button,
+.delete-button {
+  width: 100%;
+}
+
+/* Butonlar arası boşluk */
+.update-button + .delete-button {
+  margin-left: 10px;
+}
+
+h2 {
+  margin-left: 10%;
+}
+/* FORM */
+form {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+form .form-inner {
+  width: 80%;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical; /* Dikey boyutlandırmayı etkinleştir */
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
